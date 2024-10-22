@@ -39,9 +39,7 @@ public class Rook extends ChessPiece {
 
         ChessPiece targetPiece = chessBoard.board[toLine][toColumn];
         if (targetPiece != null) {
-            if (getColor().equals(targetPiece.getColor())) {
-                return false;
-            }
+            return !getColor().equals(targetPiece.getColor());
         }
 
         return true;

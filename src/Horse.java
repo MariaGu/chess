@@ -21,10 +21,6 @@ public class Horse extends ChessPiece {
             return false;
         }
         ChessPiece targetPiece = chessBoard.board[toLine][toColumn];
-        if (targetPiece == null || !getColor().equals(targetPiece.getColor())) {
-            return true;
-        }
-
-        return false;
+        return targetPiece == null || !getColor().equals(targetPiece.getColor());
     }
 }

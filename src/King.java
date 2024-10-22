@@ -20,10 +20,7 @@ public class King extends ChessPiece {
         }
 
         ChessPiece targetPiece = chessBoard.board[toLine][toColumn];
-        if (targetPiece == null || !getColor().equals(targetPiece.getColor())) {
-            return true;
-        }
-        return false;
+        return targetPiece == null || !getColor().equals(targetPiece.getColor());
     }
 
     public boolean isUnderAttack(ChessBoard board, int line, int column) {
@@ -35,11 +32,11 @@ public class King extends ChessPiece {
                         && !piece.getColor().equals(getColor())
                         && !(line == row && col == column)
                         && canMoveToPosition(board, row, column, line, column)) {
-                    return true;
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 }
 

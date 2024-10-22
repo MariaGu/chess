@@ -44,7 +44,7 @@ public class ChessBoard {
                 && board[line][1] == null
                 && board[line][2] == null
                 && board[line][3] == null
-                && !new King(nowPlayerColor()).isUnderAttack(this, line, 2)) {
+                && new King(nowPlayerColor()).isUnderAttack(this, line, 2)) {
             board[line][4] = null;
             board[line][2] = new King(nowPlayerColor());
             board[line][2].setCheck(false);
@@ -70,7 +70,7 @@ public class ChessBoard {
                 && rook.isCheck()
                 && board[line][5] == null
                 && board[line][6] == null
-                && !new King(nowPlayerColor()).isUnderAttack(this, line, 6)) {
+                && new King(nowPlayerColor()).isUnderAttack(this, line, 6)) {
             board[line][6] = new King(nowPlayerColor());
             board[line][6].setCheck(false);
             board[line][4] = null;

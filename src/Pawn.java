@@ -33,9 +33,7 @@ public class Pawn extends ChessPiece {
         if (line + direction == column
                 && (column + 1 == toColumn || column - 1 == toColumn)) {
             ChessPiece targetPiece = chessBoard.board[toLine][toColumn];
-            if (targetPiece != null && !getColor().equals(targetPiece.getColor())) {
-                return true;
-            }
+            return targetPiece != null && !getColor().equals(targetPiece.getColor());
         }
         return false;
     }
